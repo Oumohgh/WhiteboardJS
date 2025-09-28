@@ -4,38 +4,27 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 150vh;
-    background-color: #f53535;
-}
-
-
-body > div {
-    width: 80%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #f4f6f9; 
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-
-h1 {
-    color: #333;
-    font-size: 24px;
-}
-
 
 #tolbar {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
+    background-color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -46,12 +35,22 @@ button {
     color: white;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
     background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+
+#clear {
+    background-color: #e74c3c;
+}
+
+#clear:hover {
+    background-color: #c0392b;
 }
 
 
@@ -69,20 +68,14 @@ input[type="range"]:hover {
     border: 1px solid #3498db;
 }
 
-#clear {
-    background-color: #e74c3c;
-}
-
-#clear:hover {
-    background-color: #c0392b;
-}
-
 
 #canvas {
     border: 2px solid #ddd;
     border-radius: 12px;
-    width: 100%;
+    width: 80%;
+    max-width: 1200px;
     height: 600px;
     background-color: #fff;
     cursor: crosshair;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
