@@ -1,81 +1,92 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+:root {
+  --bg-color: #f4f6f9;
+  --text-color: #333;
+  --toolbar-bg: #fff;
+  --button-bg: #3498db;
+  --button-hover: #2980b9;
+  --danger-bg: #e74c3c;
+  --danger-hover: #c0392b;
+  --canvas-bg: #fff;
+}
+
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #f4f4f4;
+  --toolbar-bg: #2c2c2c;
+  --button-bg: #5dade2;
+  --button-hover: #3498db;
+  --danger-bg: #e74c3c;
+  --danger-hover: #922b21;
+  --canvas-bg: #2c2c2c;
 }
 
 
 body {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    background-color: #f4f6f9; 
-    padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
 }
 
 #tolbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    padding: 12px 18px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--toolbar-bg);
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-
 button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #3498db;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s, transform 0.2s;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+  background-color: var(--button-hover);
 }
-
 
 #clear {
-    background-color: #e74c3c;
+  background-color: var(--danger-bg);
 }
-
 #clear:hover {
-    background-color: #c0392b;
+  background-color: var(--danger-hover);
 }
-
-
-input[type="color"],
-input[type="range"] {
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: border 0.3s;
-}
-
-input[type="color"]:hover,
-input[type="range"]:hover {
-    border: 1px solid #3498db;
-}
-
 
 #canvas {
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    width: 80%;
-    max-width: 1200px;
-    height: 600px;
-    background-color: #fff;
-    cursor: crosshair;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  background-color: var(--canvas-bg);
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 1200px;
+  height: 600px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+  #tolbar {
+    flex-direction: column;
+    width: 100%;
+  }
+  #canvas {
+    width: 100%;
+    height: 400px;
+  }
+  button {
+    width: 100%;
+  }
 }
