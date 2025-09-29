@@ -2,12 +2,12 @@
 :root {
   --bg-color: #f4f6f9;
   --text-color: #333;
-  --toolbar-bg: #fff;
+  --toolbar-bg: #ffffff;
   --button-bg: #3498db;
   --button-hover: #2980b9;
   --danger-bg: #e74c3c;
   --danger-hover: #c0392b;
-  --canvas-bg: #fff;
+  --canvas-bg: #ffffff;
 }
 
 
@@ -34,31 +34,34 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+
 #tolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
   background-color: var(--toolbar-bg);
   padding: 12px 18px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
 }
 
+
 button {
+  padding: 10px 15px;
+  border: none;
   background-color: var(--button-bg);
   color: white;
-  border: none;
   border-radius: 8px;
-  padding: 10px 15px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.2s;
 }
-
 button:hover {
   background-color: var(--button-hover);
+  transform: translateY(-2px);
 }
-
 #clear {
   background-color: var(--danger-bg);
 }
@@ -66,13 +69,27 @@ button:hover {
   background-color: var(--danger-hover);
 }
 
+
+input[type="color"], input[type="range"] {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+input[type="color"]:hover, input[type="range"]:hover {
+  border: 1px solid var(--button-bg);
+}
+
+
 #canvas {
-  background-color: var(--canvas-bg);
   border: 2px solid #ddd;
   border-radius: 12px;
   width: 80%;
   max-width: 1200px;
   height: 600px;
+  background-color: var(--canvas-bg);
+  cursor: crosshair;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
@@ -80,6 +97,7 @@ button:hover {
 @media (max-width: 768px) {
   #tolbar {
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
   }
   #canvas {
@@ -88,5 +106,6 @@ button:hover {
   }
   button {
     width: 100%;
+    font-size: 16px;
   }
 }
